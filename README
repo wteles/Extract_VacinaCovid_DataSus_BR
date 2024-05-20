@@ -1,0 +1,42 @@
+# PROJETO PARA REALIZAR UMA ETL DE DADOS DA VACINA COVID
+# A aplicação irá baixar dados da API do DataSUS e baixa-los para Local, após baixar, a aplicação irá tratar os
+# dados e em seguida dará carga em um Bucket OCI e "flagar" para que a segunda aplicação possa funcionar 
+# para importar os dados do bucket para o banco de dados.
+
+# Python Version
+# O projeto foi desenvolvido utilizando Python versão 3.9.13
+
+# Ambiente virtual
+# Recomenda-se a criação de um amviente virtual (venv) para a execução do projeto
+python -m venv venv
+
+# Dependencias
+# As bibliotecas necessárias para a execução do projeto estão no arquivo requirements.txt, instale-as utilizando
+pip install -r requirements.txt
+
+# Credenciais
+# Deve-se criar um arquivo .env na raiz do projeto para colocar as credenciais, tanto da API DataSus (credenciais publicas), 
+# quanto as do Bucket OCI
+DATA_SUS_URL="https://imunizacao-es.saude.gov.br/_search?scroll=1m"
+DATA_SUS_URL_SCROLL="https://imunizacao-es.saude.gov.br/_search/scroll"
+DATA_SUS_PUBLIC_USER="imunizacao_public"
+DATA_SUS_PUBLIC_PASSWORD="qlto5t&7r_@+#Tlstigi"
+
+OCI_USER=
+OCI_FINGERPRINT=
+OCI_TENANCY=
+OCI_REGION=
+OCI_BUCKET_NAME=
+
+# Variáveis
+# Existe um arquivo variaveis.json para setar as variáveis da ETL, as variáveis são importantes para a primeira
+# carga, testes e manutenções. Quando o projeto estiver em produção essas variáveis deverão funcionar de 
+# forma dinâmica
+
+# Manutenção
+# Toda as ações realizadas pela aplicação tem tratativa de erros, caso um erro ocorra, um arquivo especificando
+# o erro é gerado. Esses arquivos deverão ser analizados para que uma ação seja tomada 
+
+# Escalabilidade
+# Por conta do projeto funcionar com multitrading, é possível escala-lo de forma simples apenas aumentando o 
+# número de processos paralelos que são executados, de acordo com a necessidade.

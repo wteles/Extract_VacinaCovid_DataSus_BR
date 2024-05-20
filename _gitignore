@@ -1,0 +1,14 @@
+# Ignorar cache de bytecode Python
+__pycache__/
+
+# Ignorar diretórios de credenciais
+Credentials/
+
+# Ignorar logs de erro
+_error_log/
+
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar arquivos de pacotes virtuais
+venv/

@@ -1,0 +1,12 @@
+{
+    "Settings": [
+        {
+            "dt_inicio": "2022-09-01",
+            "dt_fim": "2022-09-10",
+            "max_return_sus_api": 10000,
+            "max_treading_data_sus": 3,
+            "oci_bucket_prefix": "CovidProject/Files/",
+            "oci_job_semaphore": "CovidProject/confirme_job.txt"
+        }
+    ]
+}
